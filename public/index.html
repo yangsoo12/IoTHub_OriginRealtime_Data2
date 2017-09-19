@@ -34,7 +34,12 @@
         refreshAnimationTime: 1000,
         refreshAnimationType: "bounce"
       });
-
+   setInterval(myMethod4, 1000);
+   function myMethod4( )
+	{
+		var aaa = document.getElementById("pm10").innerHTML;
+		g4.refresh(parseInt(aaa));
+	}
       
 
     });
@@ -53,10 +58,10 @@
 
     document.addEventListener("DOMContentLoaded", function(event) {
 
-      var g5;
+      var g6;
 
 	  aa = document.getElementById("pm2").innerHTML;
-      var g5 = new JustGage({
+      var g6 = new JustGage({
         id: "g6",
         value: parseInt(aa),
         min: 0,
@@ -68,6 +73,12 @@
         refreshAnimationTime: 1000,
         refreshAnimationType: "bounce"
       });
+	     setInterval(myMethod4, 1000);
+	    function myMethod4( )
+	{
+		var aaa = document.getElementById("pm2").innerHTML;
+		g4.refresh(parseInt(aaa));
+	}
 
       
 
@@ -83,10 +94,10 @@
     <script>
     document.addEventListener("DOMContentLoaded", function(event) {
 
-      var g5;
+      var g7;
 
 	  aa = document.getElementById("temp").innerHTML;
-      var g5 = new JustGage({
+      var g7 = new JustGage({
         id: "g7",
         value: parseInt(aa),
         min: 0,
@@ -98,6 +109,13 @@
         refreshAnimationTime: 1000,
         refreshAnimationType: "bounce"
       });
+	    setInterval(myMethod, 1000);
+   function myMethod()
+	{
+		var aa = document.getElementById("temp").innerHTML;
+		g1.refresh(parseInt(aa));
+	}
+    });
 
       
 
