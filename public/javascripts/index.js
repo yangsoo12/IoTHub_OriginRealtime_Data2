@@ -7,6 +7,7 @@ $(document).ready(function () {
  //---------yanji start 1/2------------
   
   //20170913
+	/*
   var pm10Data = [],
       pm25Data = [];
   var result;
@@ -22,7 +23,7 @@ $(document).ready(function () {
   		document.getElementById("pm10").innerHTML = "50";
 		document.getElementById("temp").innerHTML = "70";
   //---------yanji end 1/2------------
-  
+  */
   var data = {
     labels: timeData,
     datasets: [
@@ -143,7 +144,7 @@ $(document).ready(function () {
 //            insertDatas(pm25Data[pm25length],humidityData[humilength],temperatureData[templength],humidityData[humilength]);
 //         }
       //20170913
-    
+   
      if((pm25length<pm25Data.length || pm25length == pm25Data.length)&&(pm10length<pm10Data.length || pm10length == pm10Data.length)&&(templength<temperatureData.length || templength == temperatureData.length)&&(humilength<humidityData.length || humilength == humidityData.length)){
           pm25length = pm25Data.length;
           pm10length = pm10Data.length;
@@ -169,7 +170,7 @@ $(document).ready(function () {
          }
          Ao.showResult(p2,p1,t,h,p2State);
       }
-      
+     
      
 //---------yanji end 2/2------------
       
