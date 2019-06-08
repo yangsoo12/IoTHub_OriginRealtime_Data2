@@ -133,16 +133,16 @@ $(document).ready(function () {
       pm25Data.push(obj.params.pm2);
     
       //android 20170912 23:29
-//       if(humilength==0 || templength == 0 || pm10length ==0 || pm25length ==0){
+       if(humilength==0 || templength == 0 || pm10length ==0 || pm25length ==0){
            
-//            }
-//           }else{
-//             humilength = humidityData.length;
-//             templength = temperatureData.length;
-//             pm10length = pm10Data.length;
-//             pm25length = pm25Data.length;
-//            insertDatas(pm25Data[pm25length],humidityData[humilength],temperatureData[templength],humidityData[humilength]);
-//         }
+            }
+           }else{
+             humilength = humidityData.length;
+             templength = temperatureData.length;
+             pm10length = pm10Data.length;
+             pm25length = pm25Data.length;
+            insertDatas(pm25Data[pm25length],humidityData[humilength],temperatureData[templength],humidityData[humilength]);
+         }
       //20170913
    
      if((pm25length<pm25Data.length || pm25length == pm25Data.length)&&(pm10length<pm10Data.length || pm10length == pm10Data.length)&&(templength<temperatureData.length || templength == temperatureData.length)&&(humilength<humidityData.length || humilength == humidityData.length)){
