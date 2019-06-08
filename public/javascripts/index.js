@@ -149,7 +149,7 @@ $(document).ready(function () {
      //    }
       //20170913
    
-     if((pm25length<pm25Data.length || pm25length == pm25Data.length)&&(pm10length<pm10Data.length || pm10length == pm10Data.length)&&(templength<temperatureData.length || templength == temperatureData.length)&&(humilength<humidityData.length || humilength == humidityData.length)&&(rpmlength<rpmData.lenth || rpmlength == rpmData.length)){
+     if((pm25length<pm25Data.length || pm25length == pm25Data.length)&&(pm10length<pm10Data.length || pm10length == pm10Data.length)&&(templength<temperatureData.length || templength == temperatureData.length)&&(humilength<humidityData.length || humilength == humidityData.length)&&(rpmlength<rpmData.length || rpmlength == rpmData.length)){
           pm25length = pm25Data.length;
           pm10length = pm10Data.length;
           humilength = humidityData.length;
