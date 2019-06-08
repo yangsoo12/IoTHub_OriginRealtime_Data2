@@ -1,5 +1,6 @@
 $(document).ready(function () {
   var timeData = [],
+      rpmData=[],
     temperatureData = [],
     humidityData = [],
   pm2Data = [],
@@ -17,6 +18,7 @@ $(document).ready(function () {
   var templength = temperatureData.length;
   var pm10length = pm10Data.length;
   var pm25length = pm25Data.length;
+  var rpmlength = rpm.length;
    
 
    document.getElementById("pm2").innerHTML = "30";
@@ -141,7 +143,8 @@ $(document).ready(function () {
              templength = temperatureData.length;
              pm10length = pm10Data.length;
              pm25length = pm25Data.length;
-            insertDatas(pm25Data[pm25length],humidityData[humilength],temperatureData[templength],humidityData[humilength]);
+             rpmlength = rpmData.length;
+            insertDatas(pm25Data[pm25length],humidityData[humilength],temperatureData[templength],humidityData[humilength],rpmData[rpmlength]);
          }
       //20170913
    
@@ -150,14 +153,14 @@ $(document).ready(function () {
           pm10length = pm10Data.length;
           humilength = humidityData.length;
           templength = temperatureData.length;
-          
-          insertDatas(pm25Data[pm25length-1],pm10Data[pm10length-1],temperatureData[templength-1],humidityData[humilength-1]);
+          rpmlength = rpmData.length;
+          insertDatas(pm25Data[pm25length-1],pm10Data[pm10length-1],temperatureData[templength-1],humidityData[humilength-1],rpmData[rpmlength-1]);
                           
           }
      
       
       //android 20170912 23:29
-      function insertDatas(p2,p1,t,h){
+      function insertDatas(p2,p1,t,h,rpm){
          var p2State;
          if(p2<31){
            p2State = "좋음";
@@ -168,7 +171,7 @@ $(document).ready(function () {
          }else{
            p2State = "매우나쁨";
          }
-         Ao.showResult(p2,p1,t,h,p2State);
+         Ao.showResult(p2,p1,t,h,p2State,rpm);
       }
      
      
