@@ -137,7 +137,7 @@ $(document).ready(function () {
       //android 20170912 23:29
        if(humilength==0 || templength == 0 || pm10length ==0 || pm25length ==0){
            
-            }
+            
            }else{
              humilength = humidityData.length;
              templength = temperatureData.length;
@@ -153,7 +153,8 @@ $(document).ready(function () {
           pm10length = pm10Data.length;
           humilength = humidityData.length;
           templength = temperatureData.length;
-          insertDatas(pm25Data[pm25length-1],pm10Data[pm10length-1],temperatureData[templength-1],humidityData[humilength-1]);
+	     rpmlength = rpmData.length;
+          insertDatas(pm25Data[pm25length-1],pm10Data[pm10length-1],temperatureData[templength-1],humidityData[humilength-1],rpmData[rpmData-1]);
                           
           }
      
