@@ -153,8 +153,7 @@ $(document).ready(function () {
           pm10length = pm10Data.length;
           humilength = humidityData.length;
           templength = temperatureData.length;
-          rpmlength = rpmData.length;
-          insertDatas(pm25Data[pm25length-1],pm10Data[pm10length-1],temperatureData[templength-1],humidityData[humilength-1],rpmData[rpmlength-1]);
+          insertDatas(pm25Data[pm25length-1],pm10Data[pm10length-1],temperatureData[templength-1],humidityData[humilength-1]);
                           
           }
      
