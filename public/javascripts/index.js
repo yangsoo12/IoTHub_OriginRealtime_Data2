@@ -106,6 +106,7 @@ $(document).ready(function () {
 		document.getElementById("temp").innerHTML = obj.params.Temperature;
       timeData.push(obj.time);
       temperatureData.push(obj.params.Temperature);
+	    rpmData.push(obj.params.rpm);
       // only keep no more than 50 points in the line chart
       const maxLen = 10;
       var len = timeData.length;
