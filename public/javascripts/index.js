@@ -106,7 +106,7 @@ $(document).ready(function () {
 		document.getElementById("temp").innerHTML = obj.params.Temperature;
       timeData.push(obj.time);
       temperatureData.push(obj.params.Temperature);
-	    rpmData.push(obj.params.rpm);
+	    
       // only keep no more than 50 points in the line chart
       const maxLen = 10;
       var len = timeData.length;
@@ -134,7 +134,7 @@ $(document).ready(function () {
   //20170913 pm Data push    
       pm10Data.push(obj.params.pm10);
       pm25Data.push(obj.params.pm2);
-    
+      rpmData.push(obj.params.rpm);
       //android 20170912 23:29
  //      if(humilength==0 || templength == 0 || pm10length ==0 || pm25length ==0){
            
