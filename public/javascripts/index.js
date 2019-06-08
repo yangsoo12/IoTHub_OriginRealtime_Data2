@@ -1,10 +1,10 @@
 $(document).ready(function () {
   var timeData = [],
-      rpmData=[],
     temperatureData = [],
     humidityData = [],
   pm2Data = [],
-  pm10Data = [];
+  pm10Data = [],
+  rpmData=[];
  //---------yanji start 1/2------------
   
   //20170913
@@ -18,7 +18,7 @@ $(document).ready(function () {
   var templength = temperatureData.length;
   var pm10length = pm10Data.length;
   var pm25length = pm25Data.length;
-  var rpmlength = rpm.length;
+  var rpmlength = rpmData.length;
    
 
    document.getElementById("pm2").innerHTML = "30";
