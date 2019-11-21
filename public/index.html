@@ -20,37 +20,31 @@
 <body>
     <canvas id="myChart" width="400" height="150"></canvas>
 <!------------------------------------------------------------------------>
-	<div id="g5"></div>   
-    
-    <!--<script src="../justgage-1.0.1.js"></script>-->
+	
     
     <script>
-	var aa;
+var g1;
     document.addEventListener("DOMContentLoaded", function(event) {
-
-      var g5;
-	  aa = document.getElementById("pm10").innerHTML;
-
-      var g5 = new JustGage({
-        id: "g5",
-        value: parseInt(aaa),
-        min: 0,
-        max: 100,
-        title: "pm10",
-        label: "",
-        startAnimationTime: 2000,
-        startAnimationType: ">",
-        refreshAnimationTime: 1000,
-        refreshAnimationType: "bounce"
-      });
-   setInterval(myMethod1, 1000);
-   function myMethod1( )
+        g1 = new JustGage({
+            id: "g5",
+            value: 72,
+            min: 0,
+            max: 100,
+            donut: true,
+            gaugeWidthScale: 0.3,
+            counter: true,
+            hideInnerShadow: true
+        });
+   //     document.getElementById('g1_refresh').addEventListener('click', function() {
+   //         g1.refresh(getRandomInt(0, 100));
+   //     });
+   setInterval(myMethod, 1000);
+   function myMethod()
 	{
-		var aaa = document.getElementById("pm10").innerHTML;
-		g5.refresh(parseInt(aaa));
+		var aa = document.getElementById("pm2").innerHTML;
+		g1.refresh(parseInt(aa));
+	
 	}
-      
-
     });
     </script>
 	
@@ -58,89 +52,77 @@
 
 
 <!------------------------------------------------------------------------>
-	<div id="g6"></div>   
-    <script src="raphael-2.1.4.min.js"></script>
-    <!--<script src="../justgage-1.0.1.js"></script>-->
-    <script src="justgage.js"></script>
-    <script>
-
-
+<script>
+    var g2;
     document.addEventListener("DOMContentLoaded", function(event) {
-
-      var g6;
-
-	  aa = document.getElementById("pm2").innerHTML;
-      var g6 = new JustGage({
-        id: "g6",
-        value: parseInt(aaa),
-        min: 0,
-        max: 100,
-        title: "pm2.5",
-        label: "",
-        startAnimationTime: 2000,
-        startAnimationType: ">",
-        refreshAnimationTime: 1000,
-        refreshAnimationType: "bounce"
-      });
-	     setInterval(myMethod2, 1000);
-	    function myMethod2( )
+        g2 = new JustGage({
+            id: "g2",
+            value: 72,
+            min: 0,
+            max: 100,
+            donut: true,
+            gaugeWidthScale: 0.3,
+            counter: true,
+            hideInnerShadow: true
+        });
+   //     document.getElementById('g1_refresh').addEventListener('click', function() {
+   //         g1.refresh(getRandomInt(0, 100));
+   //     });
+   setInterval(myMethod2, 1000);
+   function myMethod2( )
 	{
-		var aaa = document.getElementById("pm2").innerHTML;
-		g6.refresh(parseInt(aaa));
-	}
-
-      
-
-    });
-    </script>
-<!------------------------------------------------------------------------>
-
-<!------------------------------------------------------------------------>
-	<div id="g7"></div>   
-    <script src="raphael-2.1.4.min.js"></script>
-    <!--<script src="../justgage-1.0.1.js"></script>-->
-    <script src="justgage.js"></script>
-    <script>
-    document.addEventListener("DOMContentLoaded", function(event) {
-
-      var g7;
-
-	  aa = document.getElementById("temp").innerHTML;
-      var g7 = new JustGage({
-        id: "g7",
-        value: parseInt(aa),
-        min: 0,
-        max: 100,
-        title: "Temperature",
-        label: "",
-        startAnimationTime: 2000,
-        startAnimationType: ">",
-        refreshAnimationTime: 1000,
-        refreshAnimationType: "bounce"
-      });
-      setInterval(myMethod3, 1000);
-      function myMethod3()
-	{
-		var aa = document.getElementById("temp").innerHTML;
-		g7.refresh(parseInt(aa));
+		var aaa = document.getElementById("pm10").innerHTML;
+		g2.refresh(parseInt(aaa));
 	}
     });
-
-      
-
+    </script>
+<!---------------------------------------------------------------------------------------->
+	
+    <script>
+    var g3;
+    document.addEventListener("DOMContentLoaded", function(event) {
+        g3 = new JustGage({
+            id: "g3",
+            value: 72,
+            min: 0,
+            max: 100,
+            donut: true,
+            gaugeWidthScale: 0.3,
+            counter: true,
+            hideInnerShadow: true
+        });
+   //     document.getElementById('g1_refresh').addEventListener('click', function() {
+   //         g1.refresh(getRandomInt(0, 100));
+   //     });
+   setInterval(myMethod3, 1000);
+   function myMethod3( )
+	{
+		var aaa = document.getElementById("temp").innerHTML;
+		g3.refresh(parseInt(aaa));
+	}
     });
     </script>
-	<table>
-	<tr><td>
-	<div id="g5"></div>  
-	</td>
-	<td>
-	<div id="g5"></div>  
-	</td>
-	<td>
-	<div id="g5"></div>  
-	</td></tr>
-	</table>
+	<table class ="centertable" >
+    <tr>
+        <td> 
+            <div class="ttitle">PM2.5(㎍/㎥)</div>
+            <div id="g1"></div>
+            <p id="p2g5">--</p>
+        </td>
+
+        <td> 
+            <div class="ttitle">PM10(㎍/㎥)</div>
+            <div id="g2"></div>
+            <p id="p10g6">--</p>
+        </td>
+	 <td> 
+            <div class="ttitle">PM10(㎍/㎥)</div>
+            <div id="g3"></div>
+            <p id="p10g6">--</p>
+        </td>
+	    
+    </tr>
+</table>
 
 <!------------------------------------------------------------------------>
 
