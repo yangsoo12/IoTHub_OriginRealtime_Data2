@@ -5,6 +5,8 @@ $(document).ready(function () {
   pm2Data = [],
   pm10Data = [],
   rpmData=[];
+  rpm2Data=[];
+  moveData=[];
  //---------yanji start 1/2------------
   
   //20170913
@@ -19,7 +21,8 @@ $(document).ready(function () {
   var pm10length = pm10Data.length;
   var pm25length = pm25Data.length;
   var rpmlength = rpmData.length;
-   
+  var rpm2length = rpm2Data.length;
+  var movelength = moveData.length;
 
    document.getElementById("pm2").innerHTML = "30";
   		document.getElementById("pm10").innerHTML = "50";
@@ -128,7 +131,7 @@ $(document).ready(function () {
 	  {
 		  pm2Data.shift();
 	  }
-	     if(obj.params.pm2>100){
+	  if(obj.params.pm2>100){
   document.getElementById("p2g5").innerHTML = "아주나쁨";
 }else if(obj.params.pm2>50){
   document.getElementById("p2g5").innerHTML = "나쁨";
@@ -160,6 +163,8 @@ if(obj.params.pm10>150){
       pm10Data.push(obj.params.pm10);
       pm25Data.push(obj.params.pm2);
       rpmData.push(obj.params.rpm);
+	  rpm2Data.push(obj.params.rpm2);
+	  moveData.push(obj.params.move);
       //android 20170912 23:29
  //      if(humilength==0 || templength == 0 || pm10length ==0 || pm25length ==0){
            
@@ -173,20 +178,22 @@ if(obj.params.pm10>150){
     //        insertDatas(pm25Data[pm25length],humidityData[humilength],temperatureData[templength],humidityData[humilength],rpmData[rpmlength]);
      //    }
       //20170913
-   
-     if((pm25length<pm25Data.length || pm25length == pm25Data.length)&&(pm10length<pm10Data.length || pm10length == pm10Data.length)&&(templength<temperatureData.length || templength == temperatureData.length)&&(humilength<humidityData.length || humilength == humidityData.length)&&(rpmlength<rpmData.length || rpmlength == rpmData.length)){
+   //(rpm2length<rpm2Data.length || rpm2length == rpm2Data.length) && (movelength < moveData.length || movelength == moveData.length)
+     if((pm25length<pm25Data.length || pm25length == pm25Data.length)&&(pm10length<pm10Data.length || pm10length == pm10Data.length)&&(templength<temperatureData.length || templength == temperatureData.length)&&(humilength<humidityData.length || humilength == humidityData.length)&&(rpmlength<rpmData.length || rpmlength == rpmData.length)&&(rpm2length<rpm2Data.length || rpm2length == rpm2Data.length) && (movelength < moveData.length || movelength == moveData.length)){
           pm25length = pm25Data.length;
           pm10length = pm10Data.length;
           humilength = humidityData.length;
           templength = temperatureData.length;
 	   rpmlength = rpmData.length;
-          insertDatas(pm25Data[pm25length-1],pm10Data[pm10length-1],temperatureData[templength-1],humidityData[humilength-1],rpmData[rpmlength-1]);
+	   rpm2length = rpm2Data.length;
+	   movelength = moveData.length;
+          insertDatas(pm25Data[pm25length-1],pm10Data[pm10length-1],temperatureData[templength-1],humidityData[humilength-1],rpmData[rpmlength-1],rpm2Data[rpm2length-1],moveData[movelength-1]);
                           
           }
      
       
       //android 20170912 23:29
-      function insertDatas(p2,p1,t,h,rpm){
+      function insertDatas(p2,p1,t,h,rpm,rpm2,move){
          var p2State;
          if(p2<31){
            p2State = "좋음";
@@ -197,7 +204,7 @@ if(obj.params.pm10>150){
          }else{
            p2State = "매우나쁨";
          }
-         Ao.showResult(p2,p1,t,h,p2State,rpm);
+         Ao.showResult(p2,p1,t,h,p2State,rpm,rpm2,move);
       }
      
      
